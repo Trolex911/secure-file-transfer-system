@@ -20,13 +20,11 @@ while True:
     data = conn.recv(1024)
     if not data:
         break
+    
     decrypted_data = encrypt_decrypt(data)
-file.write(decrypted_data)
+    file.write(decrypted_data)
 
 file.close()
 conn.close()
 
 print("File received successfully!")
-def encrypt_decrypt(data):
-    key = 123
-    return bytes([b ^ key for b in data])
