@@ -14,13 +14,11 @@ while True:
     data = file.read(1024)
     if not data:
         break
+    
     encrypted_data = encrypt_decrypt(data)
-client.send(encrypted_data)
+    client.send(encrypted_data)
 
 file.close()
 client.close()
 
 print("File sent successfully!")
-def encrypt_decrypt(data):
-    key = 123
-    return bytes([b ^ key for b in data])
